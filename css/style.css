@@ -21,8 +21,9 @@ footer {
 
 /* __________________________________/ ÁREA DA NAVBAR \__________________________________ */
 .navbar {
-    height: 100px;
     display: flex;
+    position: relative;
+    height: 100px;
     background: black;
     justify-content: space-between;
     align-items: center;
@@ -43,20 +44,24 @@ footer {
 }
 
 .hamburger {
-    /* Menu de hambúrguer para responsividade  */
     display: none;
     font-size: 28px;
     background: none;
     color: aliceblue;
+    z-index: 1000;
     border: none;
     cursor: pointer;
+    /* Menu de hambúrguer para responsividade  */
 }
 
 .menu {
     display: flex;
+    position: absolute;
     gap: 20px;
+    right: 10%;
     margin-left: auto;
     list-style: none;
+    z-index: 999;
     /* Área destinada ao menu à direita */
 }
 
@@ -289,7 +294,7 @@ footer {
         flex-direction: column;
         position: absolute;
         align-items: center;
-        top: 60px;
+        top: 60%;
         right: 10px;
         background: black;
         padding: 15px;
