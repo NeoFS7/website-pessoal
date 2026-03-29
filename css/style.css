@@ -222,13 +222,19 @@ footer {
 }
 
 .contato input {
-    padding: 4px;
+    padding: 6px;
     font-size: 18px;
+    background: rgba(150, 142, 150, 0.5);
+    color: aliceblue;
+    border-radius: 12px;
 }
 
 .contato textarea {
     height: 150px;
     font-size: 18px;
+    background: rgba(150, 142, 150, 0.5);
+    color: aliceblue;
+    border-radius: 12px;
     resize: none;
 }
 
@@ -237,6 +243,7 @@ footer {
     font-size: 16px;
     background-color: black;
     color: aliceblue;
+    border-radius: 12px;
     cursor: pointer;
 }
 
