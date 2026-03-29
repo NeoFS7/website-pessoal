@@ -293,7 +293,7 @@ footer {
         flex-direction: column;
         position: absolute;
         align-items: center;
-        top: 60%;
+        top: 80%;
         transform: translateX(33.33%);
         background: black;
         padding: 15px;
