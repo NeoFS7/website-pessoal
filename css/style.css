@@ -24,6 +24,7 @@ footer {
     height: 100px;
     display: flex;
     background: black;
+    justify-content: space-between;
     align-items: center;
     padding: 0 10%;
     /* Barra de navegação fixa no topo */
@@ -39,6 +40,16 @@ footer {
     color: aliceblue;
     font-size: 34px;
     /* Título do logo */
+}
+
+.hamburger {
+    /* Menu de hambúrguer para responsividade  */
+    display: none;
+    font-size: 28px;
+    background: none;
+    color: aliceblue;
+    border: none;
+    cursor: pointer;
 }
 
 .menu {
@@ -264,21 +275,30 @@ footer {
 
 /* CELULAR */
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column; 
-        height: auto;
-        padding: 20px;
-    }
-
     .logo h1 {
         font-size: 28px;
     }
 
-    .menu { /* Futuramente pretendo implementar um menu de hambúrguer */
+    .hamburger {
+        display: block;
+    }
+
+    .menu {
+        /* Fica visível apenas após clicar no menu de hambúrguer */
+        display: none;
         flex-direction: column;
+        position: absolute;
         align-items: center;
-        margin: 0;
-        padding: 0;
+        top: 60px;
+        right: 10px;
+        background: black;
+        padding: 15px;
+        border-radius: 12px;
+        transition: 0.2s ease;
+    }
+
+    .menu.active {
+        display: flex;
     }
 
     .menu a {
