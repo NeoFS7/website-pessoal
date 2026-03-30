@@ -21,6 +21,7 @@ footer {
 
 /* _______________/ ÁREA DA NAVBAR \_______________ */
 .navbar {
+    /* Barra de navegação fixa no topo */
     display: flex;
     position: relative;
     height: 100px;
@@ -28,22 +29,22 @@ footer {
     justify-content: space-between;
     align-items: center;
     padding: 0 10%;
-    /* Barra de navegação fixa no topo */
 }
 
 .logo {
-    text-align: left;
     /* Área destinada ao logo */
+    text-align: left;
 }
 
 .logo h1 {
-    font-family: 'Times New Roman', Times, serif;
+    /* Título do logo */
+    font-family: "Times New Roman", Times, serif;
     color: aliceblue;
     font-size: 34px;
-    /* Título do logo */
 }
 
 .hamburger {
+    /* Menu de hambúrguer para responsividade  */
     display: none;
     position: relative;
     font-size: 28px;
@@ -52,32 +53,31 @@ footer {
     z-index: 1000;
     border: none;
     cursor: pointer;
-    /* Menu de hambúrguer para responsividade  */
 }
 
 .menu {
+    /* Área destinada ao menu à direita */
     display: flex;
     gap: 20px;
     right: 10%;
     margin-left: auto;
     list-style: none;
     z-index: 999;
-    /* Área destinada ao menu à direita */
 }
 
 .menu a {
+    /* Links do menu */
     color: aliceblue;
     text-decoration: none;
     font-size: 20px;
     padding: 10px 15px;
-    /* Links do menu */
 }
 
 .menu a:hover {
+    /* Efeito ao passar o mouse nos links */
     color: #FF2978;
     border-top: 4px solid #3a2ba1;
     transition: 0.5s;
-    /* Efeito ao passar o mouse nos links */
 }
 
 /* _______________/ ÁREA DA PÁGINA PRINCIPAL \_______________ */
@@ -90,9 +90,9 @@ footer {
 }
 
 .texto-hero {
+    /* Texto inicial da página principal */
     max-width: 600px;
     margin-top: 50px;
-    /* Texto inicial da página principal */
 }
 
 .titulos {
@@ -115,6 +115,7 @@ footer {
 }
 
 .contatar {
+    /* Botão de contato */
     display: inline-block;
     text-decoration: none;
     text-transform: uppercase;
@@ -123,7 +124,6 @@ footer {
     padding: 20px;
     font-size: 18px;
     border-radius: 12px;
-    /* Botão de contato */
 }
 
 .contatar:hover {
@@ -141,42 +141,43 @@ footer {
 
 .foto-perfil img {
     max-width: 400px;
-    /* Deixa a imagem em um tamanho visualmente agradável */
     border-radius: 12px;
     filter: contrast(110%) brightness(90%);
 }
 
 /* _______________/ ÁREA DA PÁGINA "SOBRE"  \_______________ */
 .sobre-wrapper {
+    /* Container da seção sobre */
     display: flex;
     gap: 30px;
     max-width: 1400px;
     margin: 0 auto;
     padding: 20px;
-    /* Container da seção sobre */
 }
 
 .sobre-texto {
+    /* Caixa de texto "Sobre mim" */
     max-width: 580px;
     padding: 20px;
     text-align: center;
-    /* Caixa de texto "Sobre mim" */
 }
 
 .titulo {
-    font-family: 'Times New Roman', Times, serif;
+    /* Título da seção */
+    font-family: "Times New Roman", Times, serif;
     font-size: 32px;
     text-align: center;
-    /* Título da seção */
 }
 
 .morcego {
+    /* Ícone morcego animado */
     display: inline-block;
     animation: voar 1s infinite alternate;
-    /* Ícone morcego animado */
 }
 
 @keyframes voar {
+
+    /* Animação do morcego */
     from {
         transform: translateY(0);
     }
@@ -184,17 +185,16 @@ footer {
     to {
         transform: translateY(-5px);
     }
-
-    /* Animação do morcego */
 }
 
 .sobre-texto p {
+    /* Texto da seção sobre */
     font-size: 18px;
     line-height: 1.5;
-    /* Texto da seção sobre */
 }
 
 .sobre-img {
+    /* Container das imagens da seção sobre */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -202,14 +202,13 @@ footer {
     align-items: center;
     flex: 1;
     gap: 20px;
-    /* Container das imagens da seção sobre */
 }
 
 .sobre-img img {
+    /* Imagens estilizadas */
     width: 300px;
     height: 400px;
     border-radius: 12px;
-    /* Imagens estilizadas */
 }
 
 /* _______________/ ÁREA DA PÁGINA DE CONTATO \_______________ */
@@ -296,6 +295,7 @@ footer {
     }
 
     .menu {
+        /* Fica visível apenas após clicar no menu de hambúrguer */
         display: none;
         flex-direction: column;
         position: absolute;
@@ -306,7 +306,6 @@ footer {
         padding: 15px;
         border-radius: 12px;
         transition: 0.2s ease;
-        /* Fica visível apenas após clicar no menu de hambúrguer */
     }
 
     .menu.active {
