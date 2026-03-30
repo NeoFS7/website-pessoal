@@ -242,14 +242,7 @@ footer {
     display: flex;
     padding: 12px;
     margin-right: 12px;
-    background-color: red;
     gap: 20px;
-}
-
-.tipos-contato a {
-    color: aliceblue;
-    background: rgb(25, 100, 10);
-    text-decoration: none;
 }
 
 .contato-cartao {
@@ -257,14 +250,39 @@ footer {
     position: relative;
     width: 200px; /* Altera o tamanho do cartão */
     padding: 20px;
-    border: 1px solid white;
+    background: black;
+    background-size: cover;
+    background-position: center;
+    color: aliceblue;
+    text-decoration: none;
     border-radius: 12px;
 }
 
-.texto-contato {}
+.contato-oculto {
+    display: none;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    inset: 0;
+    color: aliceblue;
+    font-size: 24px;
+}
 
-.contato-oculto {}
+.contato-cartao:hover img {
+    display: none;
+}
 
+.contato-cartao:hover .texto-contato {
+    display: none;
+}
+
+.contato-cartao:hover .contato-oculto {
+    display: flex;
+    background: url("../img/fantasmas.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+}
 /* _______________/ ÁREA DA PÁGINA DE FORMULÁRIO \_______________ */
 .formulario {
     display: flex;
