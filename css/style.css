@@ -36,11 +36,12 @@ footer {
     text-align: left;
 }
 
-.logo h1 {
+.logo a {
     /* Título do logo */
     font-family: "Times New Roman", Times, serif;
     color: aliceblue;
-    font-size: 34px;
+    font-size: 28px;
+    text-decoration: none;
 }
 
 .hamburger {
@@ -210,6 +211,9 @@ footer {
     height: 400px;
     border-radius: 12px;
 }
+
+/* _______________/ ÁREA DA PÁGINA DE CONTATOS \_______________ */
+
 
 /* _______________/ ÁREA DA PÁGINA DE FORMULÁRIO \_______________ */
 .formulario {
