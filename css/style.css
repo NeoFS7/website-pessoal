@@ -282,12 +282,12 @@ footer {
     border-radius: 12px;
 }
 * {
+    /* Garante que ao clicar, inputs não mudem de tamanho */
     box-sizing: border-box;
 }
 
 input:focus, textarea:focus {
-    outline: none;
-    border: 2px solid #805e90;
+    outline: 2px solid #805e90;
     box-shadow: 0 0 5px #805e90;
 }
 
@@ -297,6 +297,7 @@ input:focus, textarea:focus {
     background: rgba(150, 150, 150, 0.25);
     color: aliceblue;
     border-radius: 12px;
+    padding: 10px;
     resize: none;
 }
 
