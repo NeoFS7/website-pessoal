@@ -212,7 +212,7 @@ footer {
     border-radius: 12px;
 }
 
-/* _______________/ ÁREA DA PÁGINA DE CONTATOS \_______________ */
+/* _______________/ ÁREA DA PÁGINA DE CONTATO \_______________ */
 .secao-contato {
     display: flex;
     flex-direction: column;
@@ -254,6 +254,16 @@ footer {
     text-decoration: none;
     gap: 20px;
     transform-origin: center;
+}
+
+#whatsapp-icon {
+    /* Faz o ícone do whatsapp ficar alinhado com os outros dois */
+    top: -14px;
+}
+
+#whatsapp-icon .texto-contato {
+    /* Alinha o texto com os outros dois */
+    margin-top: -8px;
 }
 
 /* _______________/ ÁREA DA PÁGINA DE FORMULÁRIO \_______________ */
