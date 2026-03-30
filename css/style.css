@@ -163,7 +163,7 @@ footer {
     text-align: center;
 }
 
-.titulo {
+.titulo-sobre {
     /* Título da seção */
     font-family: "Times New Roman", Times, serif;
     font-size: 32px;
@@ -248,41 +248,15 @@ footer {
 .contato-cartao {
     display: block;
     position: relative;
-    width: 200px; /* Altera o tamanho do cartão */
-    padding: 20px;
-    background: black;
-    background-size: cover;
-    background-position: center;
+    width: 120px; /* Altera o tamanho do cartão */
+    margin: 10px;
     color: aliceblue;
     text-decoration: none;
     border-radius: 12px;
+    gap: 20px;
+    transform-origin: center;
 }
 
-.contato-oculto {
-    display: none;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    inset: 0;
-    color: aliceblue;
-    font-size: 24px;
-}
-
-.contato-cartao:hover img {
-    display: none;
-}
-
-.contato-cartao:hover .texto-contato {
-    display: none;
-}
-
-.contato-cartao:hover .contato-oculto {
-    display: flex;
-    background: url("../img/fantasmas.png");
-    background-size: cover;
-    background-position: center;
-    border-radius: 12px;
-}
 /* _______________/ ÁREA DA PÁGINA DE FORMULÁRIO \_______________ */
 .formulario {
     display: flex;
@@ -416,6 +390,10 @@ input:focus, textarea:focus {
 
     .foto-perfil img {
         max-width: 250px;
+    }
+
+    .titulo-sobre {
+        font-size: 28px;
     }
 
     .tipos-contato {
