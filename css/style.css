@@ -96,17 +96,17 @@ footer {
     margin-top: 50px;
 }
 
-.titulos {
+.titulos-hero {
     display: flex;
     flex-direction: column-reverse;
 }
 
-.titulos h1 {
+.titulos-hero h1 {
     font-size: 55px;
     margin-top: auto;
 }
 
-.titulos h2 {
+.titulos-hero h2 {
     font-weight: 500;
 }
 
@@ -213,7 +213,57 @@ footer {
 }
 
 /* _______________/ ÁREA DA PÁGINA DE CONTATOS \_______________ */
+.secao-contato {
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+    align-items: center;
+    text-align: center;
+    gap: 32px;
+    margin-top: 5%;
+}
 
+.titulo-contato {
+    display: flex;
+    flex-direction: column-reverse;
+    text-transform: uppercase;
+    line-height: 0;
+}
+
+.titulo-contato h1 {
+    font-size: 24px;
+}
+
+.titulo-contato h2 {
+    font-size: 32px;
+}
+
+.tipos-contato {
+    display: flex;
+    padding: 12px;
+    margin-right: 12px;
+    background-color: red;
+    gap: 20px;
+}
+
+.tipos-contato a {
+    color: aliceblue;
+    background: rgb(25, 100, 10);
+    text-decoration: none;
+}
+
+.contato-cartao {
+    display: block;
+    position: relative;
+    width: 200px; /* Altera o tamanho do cartão */
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 12px;
+}
+
+.texto-contato {}
+
+.contato-oculto {}
 
 /* _______________/ ÁREA DA PÁGINA DE FORMULÁRIO \_______________ */
 .formulario {
@@ -227,15 +277,24 @@ footer {
 .formulario input {
     padding: 6px;
     font-size: 18px;
-    background: rgba(150, 142, 150, 0.5);
+    background: rgba(150, 150, 150, 0.25);
     color: aliceblue;
     border-radius: 12px;
+}
+* {
+    box-sizing: border-box;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border: 2px solid #805e90;
+    box-shadow: 0 0 5px #805e90;
 }
 
 .formulario textarea {
     height: 150px;
     font-size: 18px;
-    background: rgba(150, 142, 150, 0.5);
+    background: rgba(150, 150, 150, 0.25);
     color: aliceblue;
     border-radius: 12px;
     resize: none;
@@ -324,11 +383,11 @@ footer {
         padding: 20px;
     }
 
-    .titulos h1 {
+    .titulos-hero h1 {
         font-size: 38px;
     }
 
-    .titulos h2 {
+    .titulos-hero h2 {
         font-size: 20px;
     }
 
@@ -340,6 +399,11 @@ footer {
         max-width: 250px;
     }
 
+    .tipos-contato {
+        flex-direction: column;
+        justify-content: center;
+    }
+
     .formulario {
         max-width: 90%;
     }
@@ -347,11 +411,11 @@ footer {
 
 /* CELULAR PEQUENO */
 @media (max-width: 480px) {
-    .titulos h1 {
+    .titulos-hero h1 {
         font-size: 30px;
     }
 
-    .titulos h2 {
+    .titulos-hero h2 {
         font-size: 18px;
     }
 
