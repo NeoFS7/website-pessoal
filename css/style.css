@@ -115,7 +115,7 @@ footer {
 }
 
 .contatar {
-    /* Botão de contato */
+    /* Botão de formularioo.formulario */
     display: inline-block;
     text-decoration: none;
     text-transform: uppercase;
@@ -211,8 +211,8 @@ footer {
     border-radius: 12px;
 }
 
-/* _______________/ ÁREA DA PÁGINA DE CONTATO \_______________ */
-.contato {
+/* _______________/ ÁREA DA PÁGINA DE FORMULÁRIO \_______________ */
+.formulario {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -220,7 +220,7 @@ footer {
     margin: 20px auto;
 }
 
-.contato input {
+.formulario input {
     padding: 6px;
     font-size: 18px;
     background: rgba(150, 142, 150, 0.5);
@@ -228,7 +228,7 @@ footer {
     border-radius: 12px;
 }
 
-.contato textarea {
+.formulario textarea {
     height: 150px;
     font-size: 18px;
     background: rgba(150, 142, 150, 0.5);
@@ -237,7 +237,7 @@ footer {
     resize: none;
 }
 
-.contato button {
+.formulario button {
     padding: 10px;
     font-size: 16px;
     background-color: black;
@@ -336,7 +336,7 @@ footer {
         max-width: 250px;
     }
 
-    .contato {
+    .formulario {
         max-width: 90%;
     }
 }
