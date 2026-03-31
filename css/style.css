@@ -417,6 +417,19 @@ textarea:focus {
         justify-content: center;
     }
 
+    #whatsapp-icon {
+        margin-left: -1px;
+    }
+
+    #whatsapp-icon .texto-contato {
+        margin-left: 18px;
+    }
+
+    #insta-icon {
+        /* Alinha o ícone do instagram com os demais*/
+        margin-left: 10px;
+    }
+
     .formulario {
         max-width: 90%;
     }
