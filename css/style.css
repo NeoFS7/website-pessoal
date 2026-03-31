@@ -153,14 +153,7 @@ footer {
     gap: 30px;
     max-width: 1400px;
     margin: 0 auto;
-    padding: 20px;
-}
-
-.sobre-texto {
-    /* Caixa de texto "Sobre mim" */
-    max-width: 580px;
-    padding: 20px;
-    text-align: center;
+    padding: 18px;
 }
 
 .titulo-sobre {
@@ -186,6 +179,13 @@ footer {
     to {
         transform: translateY(-5px);
     }
+}
+
+.sobre-texto {
+    /* Caixa de texto "Sobre mim" */
+    max-width: 580px;
+    padding: 18px;
+    text-align: center;
 }
 
 .sobre-texto p {
