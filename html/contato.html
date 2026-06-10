@@ -6,56 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Pessoal | Contato</title>
     <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <!-- Arquivo de estilos -->
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
     <header>
-        <nav class="navbar"> <!-- Barra de navegação -->
-            <div class="logo">
-                <a href="../index.html">Portfólio</a>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black" role="navigation"> <!-- Barra de navegação -->
+            <div class="container-fluid px-lg-5">
+                <a class="navbar-brand" href="../index.html">Portfólio</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Contato</a></li>
+                    </ul>
+                </div>
             </div>
-
-            <button class="hamburger">☰</button>
-
-            <ul class="menu">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="sobre.html">Sobre</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
         </nav>
     </header>
 
     <main>
-        <section class="secao-contato">
-            <div class="titulo-contato">
-                <h1>- Contatos -</h1>
-                <h2>Website Pessoal</h2>
-            </div>
+        <section class="secao-contato py-5">
+            <div class="container">
+                <div class="titulo-contato mb-5">
+                    <h1>- Contatos -</h1>
+                    <h2>Website Pessoal</h2>
+                </div>
 
-            <div class="tipos-contato">
-                <a id="whatsapp-icon" target="_blank"
-                    href="https://wa.me/5521985527557?text=Entrei%20em%20contato%20atrav%C3%A9s%20do%20website%20pessoal!"
-                    class="contato-cartao" rel="noopener noreferrer">
-                    <img src="../img/whatsapp-icon.png" height="160px" width="160px" alt="Ícone do Whatsapp">
-                    <div class="texto-contato">
-                        <h3>Whatsapp</h3>
-                    </div>
-                </a>
+                <div class="d-flex flex-wrap justify-content-center gap-4">
+                    <a id="whatsapp-icon" target="_blank"
+                        href="https://wa.me/5521985527557?text=Entrei%20em%20contato%20atrav%C3%A9s%20do%20website%20pessoal!"
+                        class="contato-cartao" rel="noopener noreferrer">
+                        <img src="../img/whatsapp-icon.png" alt="Ícone do Whatsapp">
+                        <div class="texto-contato">
+                            <h3>Whatsapp</h3>
+                        </div>
+                    </a>
 
-                <a target="_blank" href="formulario.html" class="contato-cartao" rel="noopener noreferrer">
-                    <img src="../img/gmail-icon.png" height="120px" width="120px" alt="Ícone do Gmail">
-                    <div class="texto-contato">
-                        <h3>Gmail</h3>
-                    </div>
-                </a>
+                    <a target="_blank" href="formulario.html" class="contato-cartao" rel="noopener noreferrer">
+                        <img src="../img/gmail-icon.png" alt="Ícone do Gmail">
+                        <div class="texto-contato">
+                            <h3>Gmail</h3>
+                        </div>
+                    </a>
 
-                <a id="insta-icon" target="_blank" href="https://www.instagram.com/natanfs7/" class="contato-cartao" rel="noopener noreferrer">
-                    <img src="../img/insta-icon.png" height="120px" width="125px" alt="Ícone do Instagram">
-                    <div class="texto-contato">
-                        <h3>Instagram</h3>
-                    </div>
-                </a>
+                    <a id="insta-icon" target="_blank" href="https://www.instagram.com/natanfs7/"
+                        class="contato-cartao" rel="noopener noreferrer">
+                        <img src="../img/insta-icon.png" alt="Ícone do Instagram">
+                        <div class="texto-contato">
+                            <h3>Instagram</h3>
+                        </div>
+                    </a>
+                </div>
             </div>
         </section>
     </main>

@@ -6,71 +6,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Website Pessoal | Sobre</title>
     <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <!-- Arquivo de estilos -->
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
     <header>
-        <nav class="navbar"> <!-- Barra de navegação -->
-            <div class="logo">
-                <a href="../index.html">Portfólio</a>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black" role="navigation"> <!-- Barra de navegação -->
+            <div class="container-fluid px-lg-5">
+                <a class="navbar-brand" href="../index.html">Portfólio</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Sobre</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
             </div>
-
-            <button class="hamburger">☰</button>
-
-            <ul class="menu">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
         </nav>
     </header>
 
     <main>
-        <section class="sobre-wrapper">
-            <div class="sobre-texto">
-                <h1 class="titulo-sobre"><span class="morcego">🦇</span> Sobre mim <span class="morcego">🦇</span></h1>
+        <section class="py-5">
+            <div class="container">
+                <div class="row g-5 align-items-start">
+                    <div class="col-lg-6 sobre-texto">
+                        <h1 class="titulo-sobre"><span class="morcego">🦇</span> Sobre mim <span class="morcego">🦇</span></h1>
 
-                <p>
-                    Tenho 19 anos e atualmente estou no terceiro período de Análise e Desenvolvimento de Sistemas na
-                    Universidade Veiga de Almeida.
-                    Minha primeira interação com programação foi utilizando Python e desde então demonstro interesse na
-                    área de tecnologia.
-                    Meu objetivo é me tornar um desenvolvedor fullstack e contribuir para transformar ideias em projetos
-                    reais.
-                </p>
+                        <p>
+                            Tenho 19 anos e atualmente estou no terceiro período de Análise e Desenvolvimento de Sistemas na
+                            Universidade Veiga de Almeida.
+                            Minha primeira interação com programação foi utilizando Python e desde então demonstro interesse na
+                            área de tecnologia.
+                            Meu objetivo é me tornar um desenvolvedor fullstack e contribuir para transformar ideias em projetos
+                            reais.
+                        </p>
 
-                <p>
-                    Durante minha jornada acadêmica, desenvolvi projetos que me ajudaram a aprimorar habilidades em
-                    programação,
-                    trabalho em equipe (organização, comunicação) e criação de sites.
-                </p>
+                        <p>
+                            Durante minha jornada acadêmica, desenvolvi projetos que me ajudaram a aprimorar habilidades em
+                            programação,
+                            trabalho em equipe (organização, comunicação) e criação de sites.
+                        </p>
 
-                <p>
-                    Possuo conhecimento básico de C, JavaScript, HTML, CSS, e MySQL. Sou intermediário no inglês
-                    e atualmente também me encontro estudando espanhol.
-                </p>
+                        <p>
+                            Possuo conhecimento básico de C, JavaScript, HTML, CSS, e MySQL. Sou intermediário no inglês
+                            e atualmente também me encontro estudando espanhol.
+                        </p>
 
-                <p>
-                    Além dos estudos, gosto de praticar jiu-jitsu no meu tempo livre, consumir
-                    literatura gótica e ouvir música, que também me inspiram
-                    a trazer disciplina, raciocínio e criatividade para os meus trabalhos.
-                </p>
+                        <p>
+                            Além dos estudos, gosto de praticar jiu-jitsu no meu tempo livre, consumir
+                            literatura gótica e ouvir música, que também me inspiram
+                            a trazer disciplina, raciocínio e criatividade para os meus trabalhos.
+                        </p>
 
-                <p>
-                    Ultimamente, tenho procurado estagiar como desenvolvedor low-code para aprimorar ainda mais minhas
-                    habilidades
-                    na criação de sites e aplicativos.
-                </p>
-            </div>
-            <div class="sobre-img">
-                <a href="https://open.spotify.com/playlist/0G5WqMvHsX8eOrJKEwv89s" target="_blank"
-                    rel="noopener noreferrer">
-                    <img src="../img/dracula.jpg" alt="Capa do livro do Drácula"></a>
+                        <p>
+                            Ultimamente, tenho procurado estagiar como desenvolvedor low-code para aprimorar ainda mais minhas
+                            habilidades
+                            na criação de sites e aplicativos.
+                        </p>
+                    </div>
 
-                <a href="https://open.spotify.com/playlist/6egwJEiwvFU2NZMdwQpCd2" target="_blank"
-                    rel="noopener noreferrer">
-                    <img src="../img/frankenstein.jpg" alt="Capa do livro do Frankenstein"></a>
+                    <div class="col-lg-6 sobre-img d-flex flex-wrap justify-content-center align-items-center gap-4">
+                        <a href="https://open.spotify.com/playlist/0G5WqMvHsX8eOrJKEwv89s" target="_blank"
+                            rel="noopener noreferrer">
+                            <img src="../img/dracula.jpg" alt="Capa do livro do Drácula"></a>
+
+                        <a href="https://open.spotify.com/playlist/6egwJEiwvFU2NZMdwQpCd2" target="_blank"
+                            rel="noopener noreferrer">
+                            <img src="../img/frankenstein.jpg" alt="Capa do livro do Frankenstein"></a>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
