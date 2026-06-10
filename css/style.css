@@ -250,7 +250,7 @@ footer {
     border-radius: 12px;
     cursor: pointer;
     border: 1px solid rgba(240, 248, 255, 0.4);
-    transition: 0.3s;
+    transition: 0.5s;
 }
 
 .btn-submit:hover {
