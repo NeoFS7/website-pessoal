@@ -158,7 +158,7 @@ footer {
     aspect-ratio: 3 / 4;
     border-radius: 12px;
     object-fit: cover;
-    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    transition: transform 0.5s ease, box-shadow 0.35s ease;
 }
 
 .sobre-img img:hover {
@@ -207,6 +207,11 @@ footer {
     object-fit: contain; /* Garante que a imagem não amasse */
     border-radius: 12px;
     margin-bottom: 10px;
+    transition: transform 0.5s ease;
+}
+
+.contato-cartao img:hover {
+    transform: translateY(-5px) scale(1.05);
 }
 
 /* _______________/ ÁREA DA PÁGINA DE FORMULÁRIO \______________ */
