@@ -2,6 +2,7 @@
 
 html {
     font-size: 110%; /* Aumenta a base de tamanho do Bootstrap */
+    overflow-x: hidden;
 }
 
 :root {
