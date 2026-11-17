@@ -1,0 +1,1191 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
+/* =====================================================
+   VARIÁVEIS E BASE
+===================================================== */
+:root {
+    --bs-font-sans-serif: 'EB Garamond', serif;
+    --bs-body-font-family: 'EB Garamond', serif;
+    --cor-primaria: #3a2ba1;
+    --cor-destaque: #a855f7;
+    --navbar-height: 56px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 110%; /* Aumenta a base de tamanho do Bootstrap */
+    overflow-x: hidden;
+    scroll-behavior: smooth; /* Scroll suave ao clicar nos links da navbar */
+    background-color: #070312; /* Evita gaps brancos em qualquer área não coberta */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    color: white;
+    overflow-x: hidden;
+    padding-top: var(--navbar-height); /* Compensa a altura da navbar fixa */
+    background-color: #070312; /* Evita gaps brancos acima do footer e atrás da navbar */
+}
+
+/* =====================================================
+   CÉU ESTRELADO E ESTRELAS CADENTES
+===================================================== */
+.sky-container {
+    position: fixed;
+    top: var(--navbar-height);
+    left: 0;
+    width: 100%;
+    height: calc(100% - var(--navbar-height));
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* ANIMAÇÃO DAS ESTRELAS */
+.stars {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    background: white;
+    box-shadow: 2vw 5vh 2px white, 10vw 8vh 2px white, 15vw 15vh 1px white,
+        22vw 22vh 1px white, 28vw 12vh 2px white, 32vw 32vh 1px white,
+        38vw 18vh 2px white, 42vw 35vh 1px white, 48vw 25vh 2px white,
+        53vw 42vh 1px white, 58vw 15vh 2px white, 63vw 38vh 1px white,
+        68vw 28vh 2px white, 73vw 45vh 1px white, 78vw 32vh 2px white,
+        83vw 48vh 1px white, 88vw 20vh 2px white, 93vw 52vh 1px white,
+        98vw 35vh 2px white, 5vw 60vh 1px white, 12vw 65vh 2px white,
+        18vw 72vh 1px white, 25vw 78vh 2px white, 30vw 85vh 1px white,
+        35vw 68vh 2px white, 40vw 82vh 1px white, 45vw 92vh 2px white,
+        50vw 75vh 1px white, 55vw 88vh 2px white, 60vw 95vh 1px white,
+        65vw 72vh 2px white, 70vw 85vh 1px white, 75vw 78vh 2px white,
+        80vw 92vh 1px white, 85vw 82vh 2px white, 90vw 88vh 1px white,
+        95vw 75vh 2px white;
+    animation: twinkle 8s infinite linear;
+}
+
+/* Additional twinkling stars with different animation timing */
+.stars::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background: white;
+    box-shadow: 8vw 12vh 2px white, 16vw 18vh 1px white, 24vw 25vh 2px white,
+        33vw 15vh 1px white, 41vw 28vh 2px white, 49vw 35vh 1px white,
+        57vw 22vh 2px white, 65vw 42vh 1px white, 73vw 28vh 2px white,
+        81vw 48vh 1px white, 89vw 32vh 2px white, 97vw 45vh 1px white,
+        3vw 68vh 2px white, 11vw 75vh 1px white, 19vw 82vh 2px white,
+        27vw 88vh 1px white, 35vw 72vh 2px white, 43vw 85vh 1px white,
+        51vw 92vh 2px white, 59vw 78vh 1px white;
+    animation: twinkle 6s infinite linear reverse;
+}
+
+/* ANIMAÇÃO DAS ESTRELAS CADENTES */
+.shooting-star {
+    position: absolute;
+    width: 120px;
+    height: 2px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), #ffffff);
+    border-radius: 999px;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.9));
+    opacity: 0;
+    animation: shoot 7s infinite ease-in;
+}
+
+/* Brilho na ponta principal da estrela */
+.shooting-star::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: -1px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 0 8px 2px rgba(255, 255, 255, 1);
+}
+
+.shooting-star:nth-child(1) {
+    top: 12%;
+    left: -120px;
+    animation-delay: 0s;
+    animation-duration: 6s;
+}
+
+.shooting-star:nth-child(2) {
+    top: 28%;
+    left: -120px;
+    animation-delay: 2.2s;
+    animation-duration: 8s;
+}
+
+.shooting-star:nth-child(3) {
+    top: 45%;
+    left: -120px;
+    animation-delay: 4.8s;
+    animation-duration: 7s;
+}
+
+.shooting-star:nth-child(4) {
+    top: 60%;
+    left: -120px;
+    animation-delay: 1.2s;
+    animation-duration: 9s;
+}
+
+.shooting-star:nth-child(5) {
+    top: 75%;
+    left: -120px;
+    animation-delay: 6s;
+    animation-duration: 10s;
+}
+
+@keyframes twinkle {
+    0%,
+    100% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 0.4;
+    }
+}
+
+@keyframes shoot {
+    0% {
+        transform: translateX(0) translateY(0) rotate(25deg);
+        opacity: 0;
+    }
+    3% {
+        opacity: 1;
+    }
+    28% {
+        transform: translateX(125vw) translateY(55vh) rotate(25deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(125vw) translateY(55vh) rotate(25deg);
+        opacity: 0;
+    }
+}
+
+/* =====================================================
+   FUNDO PRINCIPAL COM OVERLAY E BLOBS
+===================================================== */
+main {
+    flex: 1;
+    position: relative;
+    overflow: clip; /* clip corta o que passa (como os blobs) sem criar o bug do scroll! */
+    /* Fundo escuro moderno em vez da imagem antiga */
+    background: linear-gradient(
+        135deg,
+        #050214 0%,
+        #0e082a 50%,
+        #050214 100%
+    );
+}
+
+/* Blobs decorativos: manchas de cor atmosférica atrás do conteúdo */
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.blob-1 {
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, var(--cor-primaria), transparent 70%);
+    opacity: 0.22;
+    top: -180px;
+    right: -100px;
+}
+
+.blob-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--cor-destaque), transparent 70%);
+    opacity: 0.12;
+    top: 40%;
+    left: -200px;
+}
+
+.blob-3 {
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--cor-primaria), transparent 70%);
+    opacity: 0.18;
+    bottom: -150px;
+    right: 5%;
+}
+
+/* Seções e containers ficam sempre acima do overlay, céu e blobs */
+main > section,
+main > .sec-divisor,
+main > .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Garante que o scroll com navbar fixa não corte o topo da seção */
+section[id] {
+    scroll-margin-top: var(--navbar-height);
+}
+
+/* Linha separadora com gradiente roxo → rosa entre seções */
+.sec-divisor {
+    width: 70%;
+    max-width: 650px;
+    height: 1px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(58, 43, 161, 0.65) 30%,
+        rgba(168, 85, 247, 0.65) 50%,
+        rgba(58, 43, 161, 0.65) 70%,
+        transparent 100%
+    );
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+footer {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 20px;
+    background: #000000;
+}
+
+/* =====================================================
+   NAVBAR FIXA
+===================================================== */
+header {
+    position: relative;
+    z-index: 1050;
+}
+
+#navbar-principal {
+    z-index: 1050;
+    /* Fundo semitransparente com blur — mais premium que preto sólido */
+    background: rgba(5, 2, 18, 0.95) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: box-shadow 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#navbar-principal.navbar-scrolled {
+    box-shadow: 0 2px 24px rgba(0, 0, 0, 0.7);
+}
+
+.navbar-brand {
+    /* Título do logo */
+    font-family: 'EB Garamond', serif;
+    color: white !important;
+    font-size: 31px;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.80) !important;
+    font-size: 22px;
+    padding: 11px 17px !important;
+    border-top: 4px solid transparent; /* Reserva o espaço para o hover não expandir o layout */
+    transition: color 0.4s, border-top-color 0.4s;
+}
+
+.nav-link:hover, .nav-link:focus-visible {
+    color: var(--cor-destaque) !important;
+    border-top: 4px solid var(--cor-primaria);
+}
+
+.nav-link.nav-ativo {
+    /* Link da seção atualmente visível */
+    color: var(--cor-destaque) !important;
+    border-top: 4px solid var(--cor-primaria);
+}
+
+.navbar-toggler, .navbar-toggler:focus {
+    border: none;
+    box-shadow: none;
+}
+
+/* =====================================================
+   ANIMAÇÕES DE SCROLL REVEAL
+===================================================== */
+.reveal {
+    opacity: 0;
+    transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.reveal.reveal-left  { transform: translateX(-50px); }
+.reveal.reveal-right { transform: translateX(50px); }
+.reveal.reveal-up    { transform: translateY(40px); }
+
+.reveal.active {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* =====================================================
+   SEÇÃO HERO
+===================================================== */
+.hero {
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - var(--navbar-height)); /* Ocupa a tela inteira menos a navbar */
+}
+
+.titulos-hero {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.titulos-hero h1 {
+    font-size: 60px;
+    margin-top: auto;
+    /* Gradiente roxo claro → branco → roxo destaque no título principal */
+    background: linear-gradient(135deg, #c4b5fd 0%, #ffffff 55%, var(--cor-destaque) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.titulos-hero h2 {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.70);
+}
+
+.texto-hero p {
+    margin-top: auto;
+    font-size: 26px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.contatar {
+    /* Botão que scrolla para a seção de contato */
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    background: var(--cor-primaria);
+    padding: 18px 28px;
+    font-size: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.4s ease;
+}
+
+.contatar:hover {
+    background: var(--cor-destaque);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(168, 85, 247, 0.45);
+}
+
+/* =====================================================
+   FOTO DE PERFIL COM BORDA E PARTÍCULAS ESPACIAIS
+===================================================== */
+.foto-perfil {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foto-perfil-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+}
+
+/* Aura sutil de iluminação atrás da foto */
+.foto-perfil-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: -20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(58, 43, 161, 0.4) 0%, rgba(168, 85, 247, 0.2) 50%, transparent 70%);
+    filter: blur(25px);
+    z-index: 1;
+    pointer-events: none;
+    animation: pulsarAura 6s ease-in-out infinite alternate;
+}
+
+@keyframes pulsarAura {
+    0%   { transform: scale(0.95); opacity: 0.6; }
+    100% { transform: scale(1.05); opacity: 1; }
+}
+
+/* Moldura arredondada com borda externa combinando com o background */
+.foto-perfil-moldura {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    padding: 6px; /* Largura da borda degradê */
+    background: linear-gradient(
+        135deg,
+        rgba(58, 43, 161, 0.9) 0%,
+        rgba(196, 181, 253, 0.5) 40%,
+        rgba(168, 85, 247, 0.5) 75%,
+        rgba(58, 43, 161, 0.9) 100%
+    );
+    box-shadow: 0 10px 40px rgba(58, 43, 161, 0.4), 0 0 20px rgba(58, 43, 161, 0.25);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    z-index: 2;
+}
+
+.foto-perfil-moldura:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 16px 50px rgba(58, 43, 161, 0.55), 0 0 30px rgba(168, 85, 247, 0.35);
+}
+
+.foto-perfil-moldura img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    filter: contrast(105%) brightness(92%);
+    border: 4px solid #070312; /* Borda interna separadora na cor do background */
+    box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.6);
+}
+
+/* =====================================================
+   PARTÍCULAS ESTELARES AO REDOR DA FOTO
+===================================================== */
+.particulas-avatar {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1; /* Sempre atrás da moldura (z-index: 2) */
+}
+
+/* Estilo base de cada ponto estelar — posição/timing definidos via JS */
+.particula {
+    position: absolute;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 0 3px 1px rgba(255, 255, 255, 0.7);
+    transform: translate(-50%, -50%);
+    animation: piscarestrela infinite ease-in-out;
+}
+
+@keyframes piscarestrela {
+    0%   { opacity: 0.1; transform: translate(-50%, -50%) scale(0.5); }
+    50%  { opacity: 0.9; transform: translate(-50%, -50%) scale(1.0); }
+    100% { opacity: 0.1; transform: translate(-50%, -50%) scale(0.5); }
+}
+
+/* =====================================================
+   SEÇÃO SOBRE
+===================================================== */
+.titulo-sobre {
+    /* Título da seção */
+    font-family: 'EB Garamond', serif;
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.emoji {
+    /* Ícone de emoji animado */
+    display: inline-block;
+    animation: voar 1s infinite alternate;
+}
+
+@keyframes voar {
+    /* Animação do emoji */
+    from { transform: translateY(0); }
+    to   { transform: translateY(-5px); }
+}
+
+.sobre-texto p {
+    /* Texto da seção sobre */
+    font-size: 20px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Link EyeCatch com a cor do destaque de hover e sem sublinhado */
+.link-eyecatch {
+    color: var(--cor-destaque);
+    text-decoration: none !important;
+    font-weight: 600;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.link-eyecatch:hover,
+.link-eyecatch:focus {
+    color: var(--cor-destaque);
+    text-decoration: none !important;
+    text-shadow: 0 0 12px rgba(168, 85, 247, 0.65);
+}
+
+/* Badges de habilidades técnicas */
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-tag {
+    display: inline-block;
+    padding: 6px 18px;
+    border-radius: 100px;
+    font-size: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(58, 43, 161, 0.22);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: rgba(255, 255, 255, 0.90);
+    transition: all 0.3s ease;
+    cursor: default;
+    user-select: none;
+}
+
+.skill-tag:hover {
+    background: rgba(58, 43, 161, 0.50);
+    border-color: rgba(58, 43, 161, 0.70);
+    transform: translateY(-2px);
+}
+
+/* =====================================================
+   PLAYLISTS NA SEÇÃO SOBRE
+===================================================== */
+.sobre-playlists-col {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.playlists-container {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.playlists-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+    height: 42px; /* Alinha perfeitamente com a altura do .titulo-sobre (font-size 35px * line-height 1.2) */
+    line-height: 1.2;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.playlists-titulo {
+    font-family: 'EB Garamond', serif;
+    font-size: 35px; /* Mesmo tamanho do .titulo-sobre */
+    font-weight: 500;
+    line-height: 1.2;
+    color: rgba(255, 255, 255, 0.95);
+    transition: color 0.3s ease;
+}
+
+.playlists-toggle:hover .playlists-titulo {
+    color: var(--cor-destaque);
+}
+
+@media (max-width: 575.98px) {
+    .playlists-toggle {
+        height: auto;
+    }
+
+    .playlists-titulo {
+        font-size: 26px;
+    }
+}
+
+.playlists-seta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cor-destaque);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: rotate(0deg); /* Apontada para a direita quando fechado */
+}
+
+/* Quando aberto: a seta rotaciona 90 graus para baixo */
+.playlists-toggle[aria-expanded="true"] .playlists-seta {
+    transform: rotate(90deg); /* Apontada para baixo quando aberto */
+}
+
+/* Container colapsável com abertura vertical suave */
+.playlists-collapse {
+    width: 100%;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transform-origin: top center;
+    transition:
+        max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.playlists-collapse.aberto {
+    max-height: 900px;
+    opacity: 1;
+    overflow: visible;
+    pointer-events: auto;
+}
+
+/* Grid 2x2: duas em cima e duas embaixo */
+.playlists-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    width: 100%;
+    padding: 4px;
+}
+
+.playlist-card {
+    display: block;
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.playlist-card img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    border-radius: 13px;
+    transition: transform 0.4s ease, filter 0.35s ease;
+}
+
+.playlist-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(58, 43, 161, 0.5), 0 0 18px rgba(168, 85, 247, 0.35);
+    border-color: rgba(168, 85, 247, 0.5);
+}
+
+.playlist-card:hover img {
+    filter: brightness(1.08) contrast(1.02);
+}
+
+/* =====================================================
+   SUB-SEÇÕES DE OBRAS (JOGOS E LIVROS)
+===================================================== */
+.sobre-subsecoes {
+    position: relative;
+    width: 100%;
+}
+
+.obras-container {
+    width: 100%;
+    max-width: 1050px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.obras-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0 0 1.5rem 0;
+    line-height: 1.2;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.obras-titulo {
+    font-family: 'EB Garamond', serif;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: rgba(255, 255, 255, 0.95);
+    transition: color 0.3s ease;
+}
+
+.obras-toggle:hover .obras-titulo {
+    color: var(--cor-destaque);
+}
+
+.obras-seta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--cor-destaque);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: rotate(0deg); /* Apontada para a direita quando fechado */
+}
+
+/* Quando aberto: a seta rotaciona 90 graus para baixo */
+.obras-toggle[aria-expanded="true"] .obras-seta {
+    transform: rotate(90deg); /* Apontada para baixo quando aberto */
+}
+
+/* Container colapsável com abertura vertical suave */
+.obras-collapse {
+    width: 100%;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transform-origin: top center;
+    transition:
+        max-height 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.obras-collapse.aberto {
+    max-height: 1200px;
+    opacity: 1;
+    overflow: visible;
+    pointer-events: auto;
+}
+
+/* As 4 obras alinhadas horizontalmente em bom tamanho */
+.obras-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    width: 100%;
+    padding: 6px;
+}
+
+.obra-card {
+    display: block;
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.obra-card img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    display: block;
+    border-radius: 13px;
+    transition: transform 0.4s ease, filter 0.35s ease;
+}
+
+/* Jogos (clicáveis para Steam) */
+.obra-card-link {
+    cursor: pointer;
+}
+
+.obra-card-link:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 14px 32px rgba(58, 43, 161, 0.55), 0 0 20px rgba(168, 85, 247, 0.4);
+    border-color: rgba(168, 85, 247, 0.6);
+}
+
+.obra-card-link:hover img {
+    filter: brightness(1.08) contrast(1.02);
+}
+
+/* Livros (não clicáveis) */
+.obra-card:not(.obra-card-link) {
+    cursor: default;
+    user-select: none;
+}
+
+.obra-card:not(.obra-card-link):hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(58, 43, 161, 0.45), 0 0 14px rgba(168, 85, 247, 0.25);
+    border-color: rgba(168, 85, 247, 0.4);
+}
+
+/* Telas menores: mantêm as 4 obras alinhadas horizontalmente com scroll suave */
+@media (max-width: 991.98px) {
+    .obras-grid {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .obras-grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 12px;
+        gap: 16px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .obra-card {
+        flex: 0 0 180px;
+        scroll-snap-align: center;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .obras-titulo {
+        font-size: 26px;
+    }
+
+    .obra-card {
+        flex: 0 0 160px;
+    }
+}
+
+/* =====================================================
+   SEÇÃO PURGATÓRIO DE PRATA
+===================================================== */
+.secao-purgatorio {
+    position: relative;
+    color: white;
+}
+
+.titulo-purgatorio {
+    font-family: 'EB Garamond', serif;
+    font-size: 35px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.purgatorio-texto p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.btn-purgatorio {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    background: var(--cor-primaria);
+    padding: 12px 24px;
+    font-size: 19px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.4s ease;
+}
+
+.btn-purgatorio:hover {
+    background: var(--cor-destaque);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(168, 85, 247, 0.4);
+}
+
+.purgatorio-capa-wrapper {
+    display: inline-block;
+    max-width: 330px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.purgatorio-capa-link {
+    display: block;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(58, 43, 161, 0.3);
+    transition: transform 0.45s ease, box-shadow 0.45s ease, border-color 0.45s ease;
+}
+
+.purgatorio-capa-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 141 / 200;
+    object-fit: cover;
+    display: block;
+    border-radius: 15px;
+    transition: transform 0.45s ease, filter 0.4s ease;
+}
+
+.purgatorio-capa-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(14, 8, 42, 0.75);
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: white;
+    font-family: 'EB Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    border-radius: 15px;
+}
+
+.purgatorio-capa-overlay svg {
+    color: var(--cor-destaque);
+    transition: transform 0.35s ease;
+}
+
+.purgatorio-capa-link:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 18px 45px rgba(58, 43, 161, 0.55), 0 0 30px rgba(168, 85, 247, 0.35);
+    border-color: rgba(168, 85, 247, 0.6);
+}
+
+.purgatorio-capa-link:hover .purgatorio-capa-overlay {
+    opacity: 1;
+}
+
+.purgatorio-capa-link:hover .purgatorio-capa-overlay svg {
+    transform: translateY(-3px);
+}
+
+/* =====================================================
+   SEÇÃO CONTATO
+===================================================== */
+.secao-contato {
+    color: white;
+    text-align: center;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+}
+
+.secao-contato .container {
+    width: 100%;
+}
+
+.titulo-contato {
+    display: flex;
+    flex-direction: column-reverse;
+    text-transform: uppercase;
+    line-height: 0;
+}
+
+.titulo-contato h1 {
+    font-size: 26px;
+}
+
+/* Painel principal de contatos */
+.contato-painel {
+    max-width: 1000px;
+    margin: 0 auto;
+    transition: all 0.4s ease;
+}
+
+.contato-cards {
+    transition: flex-direction 0s, gap 0.5s cubic-bezier(0.4, 0, 0.2, 1), margin 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contato-cartao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    padding: 28px 16px 20px;
+    margin: 11px;
+    color: white;
+    text-decoration: none;
+    /* Glassmorphism: vidro fosco sobre o fundo */
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: background 0.4s ease, border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease, width 0.35s ease, padding 0.35s ease, margin 0.35s ease;
+}
+
+.contato-cartao:hover {
+    color: white;
+}
+
+.contato-cartao img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain; /* Garante que a imagem não amasse */
+    border-radius: 12px;
+    margin-bottom: 14px;
+    transition: transform 0.4s ease, width 0.35s ease, height 0.35s ease, margin 0.35s ease;
+}
+
+.contato-cartao:hover img {
+    transform: scale(1.08);
+}
+
+/* =====================================================
+   FORMULÁRIO DE CONTATO (COLAPSÁVEL SUAVE)
+===================================================== */
+
+/* Estado inicial: invisível, sem espaço, ligeiramente deslocado */
+.form-contato-wrapper {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transform: translateY(12px) scale(0.98);
+    transform-origin: top center;
+    /* Transição do formulário: height → opacidade → escala */
+    transition:
+        max-height 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity    0.4s  cubic-bezier(0.4, 0, 0.2, 1) 0.08s,
+        transform  0.45s cubic-bezier(0.4, 0, 0.2, 1) 0.05s;
+}
+
+/* Estado aberto */
+.form-contato-wrapper.form-visivel {
+    max-height: 700px;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+    /* Ao abrir: height primeiro, depois opacidade */
+    transition:
+        max-height 0.55s cubic-bezier(0.4, 0, 0.2, 1),
+        opacity    0.4s  cubic-bezier(0.4, 0, 0.2, 1) 0.1s,
+        transform  0.45s cubic-bezier(0.4, 0, 0.2, 1) 0.05s;
+}
+
+.formulario-wrapper {
+    width: 100%;
+    max-width: 520px;
+}
+
+.formulario-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 24px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.contato-cartao[aria-expanded="true"] {
+    background: rgba(58, 43, 161, 0.22);
+    border-color: rgba(58, 43, 161, 0.65);
+    box-shadow: 0 12px 30px rgba(58, 43, 161, 0.35);
+}
+
+/* =====================================================
+   LAYOUT LATERAL: CARDS NA COLUNA ESQUERDA + FORM À DIREITA
+===================================================== */
+@media (min-width: 860px) {
+    /* Painel vira row quando o form abre */
+    .contato-painel.form-aberto {
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 3rem !important;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Cards empilham em coluna */
+    .contato-painel.form-aberto .contato-cards {
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 1.25rem !important;
+        margin: 0 !important;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Cards ficam menores */
+    .contato-painel.form-aberto .contato-cartao {
+        width: 180px;
+        padding: 16px 14px 12px;
+        margin: 0;
+    }
+
+    .contato-painel.form-aberto .contato-cartao img {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 8px;
+    }
+
+    .contato-painel.form-aberto .contato-cartao h3 {
+        font-size: 1.15rem;
+    }
+
+    /* Formulário ocupa o espaço lateral */
+    .contato-painel.form-aberto .form-contato-wrapper {
+        flex: 1;
+        max-width: 520px;
+        margin-top: 0 !important;
+    }
+}
+
+.formulario .form-control {
+    font-size: 19px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.formulario .form-control::placeholder {
+    /* Altera a cor do placeholder (texto de dica) */
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.formulario textarea.form-control {
+    height: 150px;
+    resize: none;
+}
+
+.formulario .form-control:focus {
+    outline: none !important;
+    border-color: var(--cor-primaria) !important;
+    background: rgba(58, 43, 161, 0.12) !important;
+    box-shadow: 0 0 0 3px rgba(58, 43, 161, 0.35) !important;
+    color: white !important;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 11px;
+    font-size: 18px;
+    background-color: black;
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+    border: 1px solid rgba(240, 248, 255, 0.4);
+    transition: 0.5s;
+}
+
+.btn-submit:hover {
+    background-color: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+}

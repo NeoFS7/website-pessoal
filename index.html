@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natan | Website Pessoal</title>
+    <meta name="description" content="Portfólio pessoal de Natan, estudante de ADS.">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <!-- Toast notification pro envio do formulário -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.css">
+    <!-- Arquivo de estilos -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- ===== NAVBAR FIXA ===== -->
+    <header>
+        <nav id="navbar-principal" class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation">
+            <div class="container-fluid px-lg-5">
+                <a class="navbar-brand" href="#home">@neofs7</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                    aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="menu">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#purgatorio">Poemas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Fundo estrelado e estrelas cadentes -->
+        <div class="sky-container" aria-hidden="true">
+            <div class="stars"></div>
+            <div class="shooting-stars">
+                <div class="shooting-star"></div>
+                <div class="shooting-star"></div>
+                <div class="shooting-star"></div>
+                <div class="shooting-star"></div>
+                <div class="shooting-star"></div>
+            </div>
+        </div>
+
+        <!-- Blobs decorativos de cor atmosférica (posicionados via CSS) -->
+        <div class="blob blob-1" aria-hidden="true"></div>
+        <div class="blob blob-2" aria-hidden="true"></div>
+        <div class="blob blob-3" aria-hidden="true"></div>
+
+        <!-- ===== SEÇÃO HOME ===== -->
+        <section id="home" class="hero py-5">
+            <div class="container mb-5">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6 texto-hero pb-lg-5 mb-lg-5 text-center text-lg-start reveal reveal-left">
+                        <div class="titulos-hero">
+                            <h1><span class="emoji">☦︎</span>Meu nome é Natan<span class="emoji">☦︎</span></h1>
+                            <h2>Seja bem vindo ao meu website pessoal <span class="emoji">👻</span></h2>
+                        </div>
+
+                        <p>
+                            Desenvolvedor nas horas vagas e alternativo em tempo integral.
+                            Futuro engenheiro de redstone no Minecraft.
+                        </p>
+
+                        <a class="contatar" href="#contato">Fale comigo</a>
+                        <!-- Botão que scrolla para a seção de contato -->
+                    </div>
+
+                    <div class="col-lg-6 foto-perfil text-center reveal reveal-right">
+                        <div class="foto-perfil-wrapper">
+                            <!-- Partículas geradas via JS, posicionadas ao redor do círculo -->
+                            <div class="particulas-avatar" id="particulas-avatar" aria-hidden="true"></div>
+
+                            <!-- Moldura arredondada com borda externa combinando com o background -->
+                            <div class="foto-perfil-moldura">
+                                <img src="img/foto-perfil.jpeg" alt="Foto de perfil de Natan">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Separador visual entre seções -->
+        <div class="sec-divisor" aria-hidden="true"></div>
+
+        <!-- ===== SEÇÃO SOBRE ===== -->
+        <section id="sobre" class="py-5">
+            <div class="container">
+                <div class="row g-5 align-items-start">
+                    <div class="col-lg-6 sobre-texto reveal reveal-left">
+                        <h2 class="titulo-sobre"><span class="emoji">🦇</span> Sobre mim <span class="emoji">🦇</span></h2>
+
+                        <p>
+                            Tenho 19 anos e atualmente estou cursando Análise e Desenvolvimento de Sistemas (ADS).
+                            Eu gosto de jogar, assistir anime de vez em quando e eu pratico jiu-jitsu. Muito raramente eu leio,
+                            e gostaria de transformar novamente em um hábito. Alguns livros que li nesse ano de 2026 foram
+                            Drácula, O Retrato de Dorian Gray, Guerra dos Mundos e Sherlock Holmes. Eu também gosto de ler
+                            textos sobre mitologia, como a grega e a celta.
+                        </p>
+
+                        <p>
+                            Eu sou bem eclético no meu gosto musical, mas ouço principalmente darkwave, pós-punk e rock gótico.
+                            Curto ficar descobrindo artistas menos conhecidos, e recomendo muito que escute
+                            Lost Lenore, Anum Preto e Plastique Noir.
+                        </p>
+
+                        <p>
+                            Recentemente eu terminei de jogar Blasphemous 2 e adorei, uma ótima continuação do primeiro.
+                            Tenho jogado The Binding of Isaac (o Rebirth), Cult of The Lamb e
+                            Zombie Night Terror(esse quase ninguém conhece, mas eu gosto).
+                        </p>
+
+                        <p>
+                            De vez em quando eu gosto de fazer reviews dos animes que assisto no <a href="https://eyecatch.app.br" target="_blank" rel="noopener noreferrer" class="link-eyecatch">EyeCatch</a>,
+                            um aplicativo criado por um dos meus grandes amigos. Meu user por lá é @neo. Alguns dos meus animes favoritos
+                            que eu já fiz review incluem Vinland Saga, JoJo e Hajime no Ippo.
+
+                        </p>
+
+                        <!-- Badges de habilidades técnicas -->
+                        <div class="skills-tags mt-4 reveal reveal-up">
+                            <span class="skill-tag">INTP</span>
+                            <span class="skill-tag">TEA</span>
+                            <span class="skill-tag">RPG</span>
+                            <span class="skill-tag">Eyecatcher</span>
+                            <span class="skill-tag">Jiu-Jitsu</span>
+                            <span class="skill-tag">Subcultura Gótica</span>
+                        </div>
+                    </div>
+
+                    <!-- Playlists musicais do Spotify feitas por mim -->
+                    <div class="col-lg-6 sobre-playlists-col reveal reveal-right">
+                        <div class="playlists-container">
+                            <button type="button" class="playlists-toggle" id="playlists-toggle"
+                                aria-expanded="false" aria-controls="playlists-collapse">
+                                <span class="playlists-titulo">Algumas playlists minhas</span>
+                                <span class="playlists-seta" aria-hidden="true">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="9 6 15 12 9 18"></polyline>
+                                    </svg>
+                                </span>
+                            </button>
+
+                            <!-- Botão que expande/recolhe as playlists -->
+                            <div class="playlists-collapse" id="playlists-collapse">
+                                <div class="playlists-grid">
+                                    <a href="https://open.spotify.com/playlist/6egwJEiwvFU2NZMdwQpCd2" class="playlist-card" target="_blank" rel="noopener noreferrer">
+                                        <img src="img/playlist1.jpg" alt="Capa da playlist 'Goth Music'">
+                                    </a>
+                                    <a href="https://open.spotify.com/playlist/5lzrL7y2AwrKPlanL5D6PW" class="playlist-card" target="_blank" rel="noopener noreferrer">
+                                        <img src="img/playlist2.jpg" alt="Capa da playlist 'Serenidade'">
+                                    </a>
+                                    <a href="https://open.spotify.com/playlist/75VrTlbXQDzc7zENAj67ox" class="playlist-card" target="_blank" rel="noopener noreferrer">
+                                        <img src="img/playlist3.jpg" alt="Capa da playlist 'De boa'">
+                                    </a>
+                                    <a href="https://open.spotify.com/playlist/7ayFKs2scbUUAKS0lH91dX" class="playlist-card" target="_blank" rel="noopener noreferrer">
+                                        <img src="img/playlist4.jpg" alt="Capa da playlist 'Gótico Nacional'">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sub-seções: Jogos e Livros -->
+                <div class="sobre-subsecoes mt-5 pt-4">
+                    <!-- Sub-seção: Jogos que eu gosto -->
+                    <div class="obras-secao reveal reveal-up">
+                        <div class="obras-container">
+                            <button type="button" class="obras-toggle" id="jogos-toggle"
+                                aria-expanded="false" aria-controls="jogos-collapse">
+                                <span class="obras-titulo">Jogos que eu gosto</span>
+                                <span class="obras-seta" aria-hidden="true">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="9 6 15 12 9 18"></polyline>
+                                    </svg>
+                                </span>
+                            </button>
+
+                            <div class="obras-collapse" id="jogos-collapse">
+                                <div class="obras-grid">
+                                    <a href="https://store.steampowered.com/app/2114740/Blasphemous_2/" class="obra-card obra-card-link" target="_blank" rel="noopener noreferrer">
+                                        <img src="img/capa-jogo1.jpg" alt="Capa do jogo Blasphemous 2">
+                                    </a>
+                                    <a href="https://store.steampowered.com/app/1313140/Cult_of_the_Lamb/" class="obra-card obra-card-link" target="_blank" rel="noopener noreferrer">
+                                        <img src="img/capa-jogo2.jpg" alt="Capa do jogo Cult of the Lamb">
+                                    </a>
+                                    <a href="https://store.steampowered.com/app/250900/The_Binding_of_Isaac_Rebirth/" class="obra-card obra-card-link" target="_blank" rel="noopener noreferrer">
+                                        <img src="img/capa-jogo3.jpg" alt="Capa do jogo The Binding of Isaac: Rebirth">
+                                    </a>
+                                    <a href="https://store.steampowered.com/app/541570/Sally_Face/" class="obra-card obra-card-link" target="_blank" rel="noopener noreferrer">
+                                        <img src="img/capa-jogo4.jpg" alt="Capa do jogo Sally Face">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sub-seção: Livros que eu recomendo -->
+                    <div class="obras-secao reveal reveal-up mt-5">
+                        <div class="obras-container">
+                            <button type="button" class="obras-toggle" id="livros-toggle"
+                                aria-expanded="false" aria-controls="livros-collapse">
+                                <span class="obras-titulo">Livros que eu recomendo</span>
+                                <span class="obras-seta" aria-hidden="true">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="9 6 15 12 9 18"></polyline>
+                                    </svg>
+                                </span>
+                            </button>
+
+                            <div class="obras-collapse" id="livros-collapse">
+                                <div class="obras-grid">
+                                    <div class="obra-card">
+                                        <img src="img/capa-livro1.jpg" alt="Capa do livro Drácula">
+                                    </div>
+                                    <div class="obra-card">
+                                        <img src="img/capa-livro2.jpg" alt="Capa do livro O Grande Livro da Mitologia Egípcia">
+                                    </div>
+                                    <div class="obra-card">
+                                        <img src="img/capa-livro3.jpg" alt="Capa do livro Chamado de Cthulhu - Livro do Guardião">
+                                    </div>
+                                    <div class="obra-card">
+                                        <img src="img/capa-livro4.jpg" alt="Capa do livro Diário de um Banana: Rodrick é o Cara">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Separador visual entre seções -->
+        <div class="sec-divisor" aria-hidden="true"></div>
+
+        <!-- ===== SEÇÃO PURGATÓRIO DE PRATA ===== -->
+        <section id="purgatorio" class="py-5 secao-purgatorio">
+            <div class="container">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-7 purgatorio-texto reveal reveal-left">
+                        <h2 class="titulo-purgatorio text-center text-lg-start mb-4">
+                            <span class="emoji">🪶</span> Purgatório de Prata <span class="emoji">🪶</span>
+                        </h2>
+
+                        <p>
+                            Em 2023, eu comecei a compor poemas curtos buscando me expressar emocionalmente.
+                            Pouco tempo depois, me divertindo com esse processo, passei a desejar escrever
+                            não somente o que eu pensava ou sentia, mas sim ideias, conceitos e pensamentos
+                            que eu gostaria de explorar em versos.
+                        </p>
+
+                        <p>
+                            Recentemente, eu tenho me divertido bastante compondo poesias de estética mais melancólica e gótica, seja na estética ou no gênero. Por isso, eu criei o Purgatório de Prata, que é uma coletânea de alguns desses poemas mais puxados pra essa temática. Eu vou atualizar ele de vez em quando, então para quem quiser ler, eu deixo disponível o PDF atual aqui.
+                        </p>
+
+                        <div class="mt-4 text-center text-lg-start">
+                            <a href="img/Purgat%C3%B3rio%20de%20Prata.pdf" download="Purgatório de Prata.pdf" class="btn-purgatorio">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="me-2" aria-hidden="true">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="7 10 12 15 17 10"></polyline>
+                                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                                </svg>
+                                Baixar PDF
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5 purgatorio-capa-col text-center reveal reveal-right">
+                        <div class="purgatorio-capa-wrapper">
+                            <a href="img/Purgat%C3%B3rio%20de%20Prata.pdf" download="Purgatório de Prata.pdf" class="purgatorio-capa-link" aria-label="Baixar PDF de Purgatório de Prata">
+                                <img src="img/capa-purgatorio.png" alt="Capa do livro Purgatório de Prata" class="purgatorio-capa-img">
+                                <div class="purgatorio-capa-overlay" aria-hidden="true">
+                                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="7 10 12 15 17 10"></polyline>
+                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                    </svg>
+                                    <span>Baixar PDF</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Separador visual entre seções -->
+        <div class="sec-divisor" aria-hidden="true"></div>
+
+        <!-- ===== SEÇÃO CONTATO ===== -->
+        <section id="contato" class="secao-contato py-5">
+            <div class="container">
+                <div class="titulo-contato mb-5 reveal reveal-up">
+                    <h1>- Me encontre -</h1>
+                </div>
+
+                <div class="contato-painel d-flex flex-wrap justify-content-center align-items-center gap-4 gap-lg-5" id="contato-painel">
+                    <div class="contato-cards d-flex flex-wrap justify-content-center gap-4 reveal reveal-up" id="contato-cards">
+                        <a id="spotify-icon" target="_blank"
+                            href="https://open.spotify.com/user/6my6ki47sbmasgohzniqhagua"
+                            class="contato-cartao" rel="noopener noreferrer">
+                            <img src="img/spotify-icon.png" alt="Ícone do Spotify">
+                            <div class="texto-contato"><h3>Spotify</h3></div>
+                        </a>
+
+                        <a href="#formulario-contato" class="contato-cartao" id="btn-toggle-form"
+                            role="button" aria-expanded="false" aria-controls="formulario-contato"
+                            title="Clique para abrir o formulário de email">
+                            <img src="img/gmail-icon.png" alt="Ícone do Gmail">
+                            <div class="texto-contato"><h3>Gmail</h3></div>
+                        </a>
+
+                        <a id="insta-icon" target="_blank" href="https://www.instagram.com/natanfs7/"
+                            class="contato-cartao" rel="noopener noreferrer">
+                            <img src="img/insta-icon.png" alt="Ícone do Instagram">
+                            <div class="texto-contato"><h3>Instagram</h3></div>
+                        </a>
+                    </div>
+
+                    <!-- Formulário colapsável que abre ao lado dos cards -->
+                    <div class="form-contato-wrapper" id="formulario-contato" aria-hidden="true">
+                        <div class="formulario-wrapper mx-auto">
+                            <div class="formulario-card p-4 p-md-5 text-start">
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <h3 class="h4 mb-0 text-white font-garamond">✉️Enviar mensagem por Gmail</h3>
+                                    <button type="button" class="btn-close btn-close-white" id="btn-fechar-form"
+                                        aria-label="Fechar formulário"></button>
+                                </div>
+
+                                <form onsubmit="abrirGmail(event);" autocomplete="off" action="#" method="post" class="formulario">
+                                    <div class="mb-3">
+                                        <label for="assunto" class="form-label text-white">Assunto:</label>
+                                        <input type="text" id="assunto" name="assunto" class="form-control"
+                                            placeholder="Ex: proposta de projeto, dúvida, etc.">
+                                    </div>
+
+                                    <div class="mb-4">
+                                        <label for="mensagem" class="form-label text-white">Mensagem:</label>
+                                        <textarea id="mensagem" name="mensagem" rows="5" class="form-control"
+                                            placeholder="Escreva sua mensagem aqui..." required></textarea>
+                                    </div>
+
+                                    <button type="submit" class="btn-submit">
+                                        Enviar para Gmail
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Natan. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- jQuery e plugin de toast -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
